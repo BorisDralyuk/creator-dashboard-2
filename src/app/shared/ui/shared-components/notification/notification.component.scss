@@ -1,0 +1,43 @@
+.notif-content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	i{
+			font-size: 2em;
+			color: #818181;
+			border: 1px solid #818181;
+			margin-right: 20px;
+			border-radius: 15px;
+	}
+	i:hover{
+		cursor: pointer;
+		color: #5294b7;
+		border: 1px solid #5294b7;
+    border-radius: 15px;
+	}
+	.notif-counter{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 0.7em;
+		height: 18px;
+		width: 18px;
+		border-radius: 8px;
+		background-color: #ff3c7e;
+		color: white;
+		position: relative;
+    left: -33px;
+    top: -10px;
+	}
+}
+
+.notif-dialog {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 300px;
+	.notif-dialog-content{
+		padding: 20px;
+	}
+}

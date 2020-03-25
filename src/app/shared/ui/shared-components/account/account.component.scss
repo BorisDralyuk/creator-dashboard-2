@@ -1,0 +1,47 @@
+.account-content{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 59px;
+	margin-right: 30px;
+
+	i{
+			font-size: 2em;
+			color: #818181;
+			border: 1px solid #818181;
+			margin-right: 20px;
+			border-radius: 15px;
+	}
+	i:hover{
+		cursor: pointer;
+		color: #5294b7;
+		border: 1px solid #5294b7;
+    border-radius: 15px;
+	}
+			
+	// .account-icon {
+	// 	height: 40px;
+	// 	border-radius: 30px;
+	// 	opacity: 0.8;
+	// }
+	// .account-icon:hover {
+	// 	cursor: pointer;
+	// 	opacity: 1;
+	// }
+}
+
+.account-dialog {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 300px;
+	.account-dialog-content{
+		padding: 20px;
+	}
+	.account-dialog-footer{
+		display: flex;
+    justify-content: flex-end;
+		padding: 20px;
+	}
+}

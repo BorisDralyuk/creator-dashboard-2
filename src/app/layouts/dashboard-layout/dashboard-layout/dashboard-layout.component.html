@@ -1,0 +1,41 @@
+
+<div id="sidenav" #sidenav class="sidenav">
+	<div class="sidenav-menu">
+		<a class="home-link" href="javascript:void(0)">
+				<span class="label-link label-icon">
+					<i class="{{menuDataSource.main.icon}}"></i>
+				</span>
+				<span class="label-link">{{menuDataSource.main.title}}</span>
+		</a>
+		<div *ngFor="let group of menuDataSource.groups">
+			<p *ngIf="opened" class="group-name">{{group.name}}</p>
+			<a *ngFor="let itemMenu of group.data" [routerLink]="itemMenu.link"  [routerLinkActive]="['active']">
+					<span class="label-link label-icon">
+						<i class="{{itemMenu.icon}}"></i>
+					</span>
+					<span class="label-link">{{itemMenu.title}}</span>
+			</a>
+		</div>
+	</div>
+	<div class="sidenav-toogle">
+		<a *ngIf="!opened" (click)="openNav()">
+				<span class="label-link label-icon">
+					<i class="pi pi-chevron-right"></i>
+				</span>
+		</a>
+		<a *ngIf="opened" (click)="closeNav()">
+			<span class="label-link label-icon">
+				<i class="pi pi-chevron-left"></i>
+			</span>
+		</a>
+	</div>
+</div>
+
+<div id="main" #main>
+	
+	<div class="main-content">
+		<!-- <moonshot-bread-crumb></moonshot-bread-crumb> -->
+		<router-outlet></router-outlet>
+	</div>
+</div>
+

@@ -1,0 +1,13 @@
+<div class="header">
+	<moonshot-logo></moonshot-logo>
+	<moonshot-autocomplete 	[id]="'city'"
+													[dataSource]="cities" 
+													[placeholder]="'select projects'" 
+													[field]="'name'" 
+													[inputStyle] = "{'width': '500px'}"
+													(select)="onSelect($event)"></moonshot-autocomplete>
+	<div class="header-bar">
+		<moonshot-notification></moonshot-notification>
+		<moonshot-account></moonshot-account>
+	</div>
+</div>

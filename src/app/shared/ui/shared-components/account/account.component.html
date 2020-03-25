@@ -1,0 +1,17 @@
+<div class="account-content">
+	<!-- <img 	class="account-icon" 
+				src="../../../../../assets/icons/acc2.png" 
+				(click)="op.toggle($event)"/> -->
+	<i class="pi pi-user" (click)="op.toggle($event)"></i>
+</div>
+
+<p-overlayPanel #op>
+	<div class="account-dialog">
+		<div class="account-dialog-content">
+			Content
+		</div>
+		<div class="account-dialog-footer">
+			<p-button icon="pi pi-sign-out" iconPos="right" label="Sign out" (click)="signOut()"></p-button>
+		</div>
+	</div>
+</p-overlayPanel>

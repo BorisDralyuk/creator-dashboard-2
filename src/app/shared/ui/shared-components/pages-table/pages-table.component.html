@@ -1,0 +1,66 @@
+<p-table #dt 
+				[value]="dataSourceCopy" 
+				[sortField]="groupField" 
+				sortMode="single" 
+				[(selection)]="selected" 
+				[globalFilterFields]="headers"
+				(onSort)="onSort()" 
+				(onRowSelect)="onRowSelect()" 
+				(onHeaderCheckboxToggle)="onRowSelect()">
+	<!-- global filter -->
+	<ng-template pTemplate="caption">
+		<div class="filter-table">
+			<i class="pi pi-search icon-search" style="margin:4px 4px 0 0"></i>
+			<input 	type="text" 
+							class="input-content" 
+							pInputText size="50" 
+							placeholder="Global Filter"
+							(input)="filterGlobal($event.target.value)">
+		</div>
+	</ng-template>
+	<!-- header -->
+	<ng-template pTemplate="header">
+		<tr>
+			<!-- checkbox column -->
+			<th style="width: 3em">
+				<p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+			</th>
+			<!-- header and sorting column -->
+		  <th *ngFor="let col of cols" [pSortableColumn]="col.field">
+				<span class="label-header">{{col.header}}</span>
+				<p-sortIcon [field]="col.field"></p-sortIcon>
+			</th>
+		</tr>
+		<tr>
+			<!-- filter column -->
+			<th></th>
+			<th *ngFor="let col of cols" [ngSwitch]="col.field">
+				<input *ngSwitchCase="col.field" pInputText type="text" (input)="filter($event.target.value, col.field)">
+			</th>
+		</tr>
+	</ng-template>
+	<!-- body -->
+	<ng-template pTemplate="body" let-rowData let-rowIndex="rowIndex">
+		<!-- header subtable -->
+		<tr class="ui-widget-header"  *ngIf="!!groupField && rowGroupMetadata[rowData[groupField]].index === rowIndex">
+			<td class="sub-table-header" [attr.colspan]="cols.length + 1">
+				<span class="sub-table-name">{{rowData[groupField]}}</span>
+			</td>
+		</tr> 
+		<!-- data -->
+		<tr>
+				<td>
+					<p-tableCheckbox [value]="rowData"></p-tableCheckbox>
+				</td>
+				<td *ngFor="let col of cols">{{rowData[col.field]}}</td>
+		</tr>
+	</ng-template>
+	<!-- selected rows -->
+	<!-- <ng-template pTemplate="summary">
+		<ul>
+			<li *ngFor="let selectItem of selected" style="text-align: left">
+				<span *ngFor="let col of cols">{{selectItem[col.field]}}</span>
+			</li>
+		</ul>
+	</ng-template> -->
+</p-table>

@@ -1,0 +1,14 @@
+<div  class="notif-content">
+		<i class="pi pi-bell" (click)="op.toggle($event)"></i>
+		<div class="notif-counter">
+				<span>1</span>
+		</div>
+</div>
+
+<p-overlayPanel #op>
+	<div class="notif-dialog">
+		<div class="notif-dialog-content">
+			Content
+		</div>
+	</div>
+</p-overlayPanel>

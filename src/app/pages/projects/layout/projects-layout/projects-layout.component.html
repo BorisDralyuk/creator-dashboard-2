@@ -1,0 +1,3 @@
+<p-autoComplete [(ngModel)]="city" [styleClass]="auto-complete" [suggestions]="filteredCitiesSingle" (onSelect)="onSelect($event)" (completeMethod)="search($event)" field="name" [size]="10" [dropdown]="true">
+</p-autoComplete>
+<router-outlet></router-outlet>

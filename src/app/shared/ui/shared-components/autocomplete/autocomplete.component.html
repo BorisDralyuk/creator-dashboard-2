@@ -1,0 +1,11 @@
+<p-autoComplete [id]="id"
+								[(ngModel)]="item" 
+								[suggestions]="filteredDataSource" 
+								[field]="field" 
+								[size]="10" 
+								[dropdown]="true" 
+								[inputStyle]="inputStyle"
+								[placeholder]="placeholder"
+								(onSelect)="onSelect($event)"
+								(completeMethod)="search($event)" >
+</p-autoComplete>

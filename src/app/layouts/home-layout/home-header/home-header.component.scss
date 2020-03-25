@@ -1,0 +1,19 @@
+
+.header {
+		display: flex;
+		justify-content: space-between;
+    align-items: center;
+    background-color: #a2c8de;
+    height: 65px;
+		border-bottom: 1px solid #efefef;
+		position: fixed;
+		width: 100vw;
+		z-index: 1000;
+		// background-image: linear-gradient(to right, #d35f31, white);
+
+		.header-bar{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+		}
+}

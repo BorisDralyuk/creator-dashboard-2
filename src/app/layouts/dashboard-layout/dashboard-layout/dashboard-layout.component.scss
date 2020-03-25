@@ -1,0 +1,100 @@
+.sidenav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 65px; 
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  background-color: #fff; // #3f4a59; 
+  border-right: 1px solid #efefef;
+  overflow-x: hidden; 
+  padding-top: 20px;
+  transition: 0.5s; 
+  float: left;
+  height: calc(100% - 60px);
+  top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 0;
+  text-decoration: none;
+  font-size: 1em;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.active{
+  border-left: 5px solid #5294b7;
+  background-color: #a2c8de;
+  padding-right: 15px;
+    span {
+      padding-left: 15px;
+      padding-right: 5px;
+      color: #5294b7;
+      font-weight: bold;
+    }
+    i{
+      color: #5294b7;
+    }
+}
+
+.active:hover{
+   span {
+      padding-left: 15px;
+      color: #fff;
+      font-weight: bold;
+    }
+  i{
+    color: #fff;
+  }
+}
+
+.home-link {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  font-family: "Muli";
+  font-size: 1em;
+}
+
+.label-link {
+  padding-left: 20px;
+  font-family: "Muli";
+}
+
+.label-icon i{
+  font-size: 1.7em;
+}
+
+.group-name {  
+  font-size: 1.1em;
+  color: #ff3c7e;
+  padding: 5px 0 5px 65px;
+  margin: 0;
+}  
+
+.sidenav a:hover {
+  color: #fff;
+  background-color: #5294b7;
+}
+
+#main {
+  display: flex;
+  transition: margin-left .5s;
+ // padding: 20px;
+  margin-left: 60px;
+  top: 60px;
+  left: 0;
+  .main-content {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
